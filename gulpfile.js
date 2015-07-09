@@ -1,5 +1,5 @@
 // Setup variables for project paths
-var themePath = 'public/wp-content/themes/Ribs/';
+var themePath = 'public/wp-content/themes/ica/';
 
 // Include gulp
 var gulp = require('gulp'); 
@@ -61,7 +61,7 @@ gulp.task('scripts', function() {
 // Watch Files For Changes
 gulp.task('watch', function() {
    browserSync.init({
-        proxy: "dev.basewp.10.1.10.13.xip.io:8888",
+        proxy: "dev.illinoiscycling.org.10.1.10.13.xip.io:8888",
         host: "localhost",
         port: 8888
     });

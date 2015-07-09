@@ -13,7 +13,7 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'onion_basewp');
+define('DB_NAME', 'goopack_ica');
 
 /** MySQL database username */
 define('DB_USER', 'root');
