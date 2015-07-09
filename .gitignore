@@ -12,3 +12,5 @@ public/wp-content/upgrade
 public/wp-content/wp-cache-config.php
 node_modules/
 node_modules/*
+materials/
+materials/*
