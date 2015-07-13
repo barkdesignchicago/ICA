@@ -7,7 +7,10 @@ function ribs_setup(){
 	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 640;
 	register_nav_menus(
-		array( 'main-menu' => __( 'Main Menu', 'ribs' ) )
+		array( 
+			'main-menu' => __( 'Main Menu', 'ribs' ),
+			'utility-menu' => __( 'Utility Menu', 'ribs' )
+		 )
 	);
 }
 add_action('comment_form_before', 'ribs_enqueue_comment_reply_script');

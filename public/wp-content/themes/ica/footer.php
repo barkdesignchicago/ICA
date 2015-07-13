@@ -1,8 +1,12 @@
 	<!-- Footer
 	================================================== -->
-	<div class="container">
-		Footer Info
-	</div>
+	<section>
+		<footer>
+			<div class="container">
+				Footer Info
+			</div>
+		</footer>
+	</section>
 	<?php wp_footer(); ?>
 	<!-- End Footer Template -->
 
