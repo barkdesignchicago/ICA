@@ -8,8 +8,11 @@ function ribs_setup(){
 	if ( ! isset( $content_width ) ) $content_width = 640;
 	register_nav_menus(
 		array( 
-			'main-menu' => __( 'Main Menu', 'ribs' ),
-			'utility-menu' => __( 'Utility Menu', 'ribs' )
+			'main-menu-left' => __( 'Main Menu (Left)', 'ribs' ),
+			'main-menu-right' => __( 'Main Menu (Right)', 'ribs' ),
+			'utility-menu' => __( 'Utility Menu', 'ribs' ),
+			'footer-menu' => __( 'Footer Menu', 'ribs' ),
+			'footer-utility-menu' => __( 'Footer Utility Menu', 'ribs' )
 		 )
 	);
 }

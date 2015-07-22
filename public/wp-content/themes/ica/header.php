@@ -17,6 +17,7 @@
   ================================================== -->
   	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" />
 	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/main.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -42,18 +43,24 @@
 	================================================== -->
 	<section>
 		<header>
-			<div class="big-container utility-container">
+			<div id="utility-container" class="big-container">
 				<div class="container">
 					<div class="twelve columns">
+						<ul class="social-menu">
+							<li><a href="#"><img src="<?php bloginfo('template_directory'); ?>/assets/images/icon_facebook_blue.png" alt="Illinois Cycling Association Facebook Profile" width="10" height="18"></a></li>
+							<li><a href="#"><img src="<?php bloginfo('template_directory'); ?>/assets/images/icon_twitter_blue.png" alt="Illinois Cycling Association Twitter Profile" width="21" height="17"></a></li>
+						</ul>
 						<?php wp_nav_menu( array( 'theme_location' => 'utility-menu' ) ); ?>
 					</div>					
 				</div>
 			</div>
-			<div class="big-container main-nav-container">
+			<div id="main-nav-container" class="big-container">
 				<div class="container">
 					<div class="twelve columns">
-						<nav>
-							<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+						<nav class="clearfix">
+							<a itemprop="url" href="<?php echo home_url();?>" title="Home" class="logo"><img src="<?php bloginfo('template_directory'); ?>/assets/images/logo_ICA.png" class="scale-with-grid" /></a>
+							<?php wp_nav_menu( array( 'theme_location' => 'main-menu-left' ) ); ?>
+							<?php wp_nav_menu( array( 'theme_location' => 'main-menu-right' ) ); ?>
 						</nav>
 					</div>
 				</div>

@@ -13,16 +13,16 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', '');
+define('DB_NAME', 'db14648_goopack_ica');
 
 /** MySQL database username */
-define('DB_USER', '');
+define('DB_USER', 'visualpercussi');
 
 /** MySQL database password */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'stinklaD');
 
 /** MySQL hostname */
-define('DB_HOST', '');
+define('DB_HOST', 'internal-db.s14648.gridserver.com');
 
 /**
  * For developers: WordPress debugging mode.

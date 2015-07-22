@@ -22,14 +22,14 @@ var reload = browserSync.reload;
 
 // Lint Task
 gulp.task('lint', function() {
-    return gulp.src('assets/js/*.js')
+    return gulp.src('src/assets/js/*.js')
 		.pipe(jshint())
 		.pipe(jshint.reporter(stylish))
   });
 
 // Compile Our Sass
 gulp.task('sass', function() {
-    return gulp.src('assets/scss/*.scss')
+    return gulp.src('src/assets/scss/*.scss')
 		.pipe(sourcemaps.init())
 	        .pipe(sass({outputStyle: 'compressed '}))
 			.pipe(autoprefixer())
@@ -41,7 +41,7 @@ gulp.task('sass', function() {
 
 // Process and Compress images
 gulp.task('images', function() {
-	return gulp.src('assets/images/**/*')
+	return gulp.src('src/assets/images/**/*')
     	.pipe(cache(imagemin({ 
 	    	optimizationLevel: 5, progressive: true, interlaced: true 
 	    })))
@@ -50,9 +50,9 @@ gulp.task('images', function() {
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
-    return gulp.src('assets/js/*.js')
+    return gulp.src('src/assets/js/*.js')
         .pipe(concat('all.js'))
-        .pipe(gulp.dest('assets/js'))
+        .pipe(gulp.dest('src/assets/js'))
         .pipe(rename('all.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest(themePath + 'assets/js'))
@@ -61,13 +61,13 @@ gulp.task('scripts', function() {
 // Watch Files For Changes
 gulp.task('watch', function() {
    browserSync.init({
-        proxy: "dev.illinoiscycling.org.10.1.10.13.xip.io:8888",
+        proxy: "dev.illinoiscycling.org.10.1.10.19.xip.io:8888",
         host: "localhost",
         port: 8888
     });
-    gulp.watch('assets/js/*.js', ['lint', 'scripts']);
-    gulp.watch('assets/images/**/*', ['images']);
-    gulp.watch('assets/scss/*.scss', ['sass']);
+    gulp.watch('src/assets/js/*.js', ['lint', 'scripts']);
+    gulp.watch('src/assets/images/**/*', ['images']);
+    gulp.watch('src/assets/scss/*.scss', ['sass']);
     gulp.watch("public/**/*.php").on('change', reload);
 
 });

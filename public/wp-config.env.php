@@ -16,11 +16,11 @@
 
 // Set environment based on hostname
 switch ($hostname) {
-    case 'dev.illinoiscycling.org.10.1.10.13.xip.io:8888':
+    case 'dev.illinoiscycling.org.10.1.10.19.xip.io:8888':
         define('WP_ENV', 'development');
         break;
     
-    case 'clients.barkdesignchicago.com':
+    case 'clients.barkdesignchicago.com/ICA/2015/design/site':
         define('WP_ENV', 'staging');
         break;
 

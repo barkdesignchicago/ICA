@@ -1,0 +1,260 @@
+// #General body style
+body {
+  background: $dark_blue;
+  font: 14px/21px $body_font_family;
+  color: $darkgray;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+// #General horizontal rule style
+hr {
+  border: $hr_border;
+  border-width: $hr_border_width;
+  clear: both;
+  margin: $hr_margin;
+  height: 0;
+}
+
+.alignleft{
+	float:left;
+	padding-right:10px;
+	padding-bottom:40px;
+}
+
+.alignright{
+	float:right;
+	padding-left:10px;	
+	padding-bottom:40px;
+}
+
+.big-container{
+	width:100%;
+	&.pages{
+		padding-top:54px;
+	}
+}
+
+.home{
+	nav{
+		border-bottom:0 !important;
+
+	}
+}
+
+/* Main Container styles */
+
+#main-content-container{
+	@include vertical-gradient($lightpalecyan,#fff);
+}
+
+/* Hero */
+
+#hero-container{
+	background-color:$lightpalecyan;
+	.hero{
+		min-height:450px;
+		padding-top:15px;
+		background-size:1300px 450px;
+		background-position: center center;
+		background-repeat:no-repeat;
+ 	}
+ 	.hero-message{
+	 	padding-top:180px;
+	 	color:#fff;
+	 	text-align:center;
+	 	h1{
+		 	font-size:69px;
+		 	color:#fff;
+	 	}
+ 	}
+}
+
+#small-callout{
+	background-color:$lightpalecyan;	
+	text-align:center;
+	h2{
+		margin:0;
+		padding:10px 0 15px;
+		font-size:14px;
+		color:$dark_blue;
+	}
+	span{
+		padding:0 10px;
+	}
+}
+
+/* Main content area */
+
+#main-content{
+	background-color:#fff;
+	border-top:3px solid $dark_blue;
+	h1{
+		margin:20px;
+		font-size:18px;
+		line-height:20px;
+		color:$dark_blue;
+	}
+	h2{
+		margin:0;
+		padding-top:12px;
+		font-size:28px;
+		line-height:32px;
+	}
+	a{
+		color:$dark_blue;
+		&:hover{
+			color:$darkgray;
+		}
+	}
+	.post{
+		margin:0 20px;
+		padding:2px 0;
+		&:not(:first-child){
+			border-top:1px solid $lightgray;
+			
+		}
+	}
+	.intro-post{
+		@extend .post;
+		border:0;
+	}
+	.entry-meta{
+		font-size:12px;
+		font-weight:bold;
+	}
+	.entry-content{
+		margin-top:10px;
+		font-size:14px;
+	}
+	.read-more{
+		margin-top:15px;
+	}
+	.featured-image{
+		padding:50px 0;
+		background-color:$dark_blue;
+		background-position:center center;
+		background-size:cover;
+		background-repeat: no-repeat;		
+		h1{
+		 	font-size:69px;
+		 	color:#fff;
+		}
+	}
+	
+}
+
+
+
+
+/* Sidebar content area */
+
+#sidebar{
+	h3{
+		padding-bottom:5px;
+		font-size:11px;
+		font-weight:bold;
+		color:$dark_blue;		
+		line-height:normal;
+		text-transform: uppercase;
+	}
+	ul{
+		margin:0;
+		padding:0;
+		&.sid{
+			margin:0;
+			padding:0;		
+		}
+	}
+	p{
+		font-size:12px;
+	}
+	a{
+		color:$dark_blue;
+		&:hover{
+			color:$darkgray;
+		}
+	}
+	.widget-container {
+		padding:15px 17px 5px;
+		background-color:#fff;
+		border-top:3px solid $dark_blue;
+	}
+	.bluebg{
+		background-color:$dark_blue;
+		color:#fff;
+		border-top:3px solid $darkest_blue;
+		h3{
+			font-size:18px;
+			color:#fff;
+		}
+		a{
+			color:#fff;
+		}
+		
+	}
+
+}
+
+
+/* Above Footer Rule */
+
+
+.bottom-rule-home{
+	padding-top:100px;
+	height:16px;
+	background-image:url(../images/rule_footer.jpg);
+	background-size:1300px 16px;
+	background-position: bottom center;
+	background-repeat:no-repeat;
+}
+
+.bottom-rule{
+	padding-top:100px;
+	border-bottom:16px solid $darkest_blue;
+}
+
+
+/* Footer */
+
+.footer{
+	padding: 40px 0;
+	color:#fff;
+	#menu-footer-menu{
+		padding-left:60px;
+		background-image:url(../images/logo_ICA_state.png);
+		background-position: left 4px;
+		background-repeat: no-repeat;
+		a{
+			text-transform: uppercase;
+		}
+	}
+
+	.menu{
+		float:left;
+		li{
+			margin:0;
+			padding:0;
+		}
+		a{
+			font-family:$heading_font;
+			font-size:12px;
+		}
+	}
+	
+	.footer-social{
+		text-align:right;
+		li{
+			display:inline;
+			padding-left:5px;
+		}
+	}
+	.footer-copyright{
+		font-size:10px;
+		p{
+			margin:0;
+		}
+	}
+	
+	
+}
