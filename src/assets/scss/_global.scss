@@ -126,6 +126,14 @@ hr {
 	.entry-content{
 		margin-top:10px;
 		font-size:14px;
+		.row{
+			p{
+				margin:0 20px;
+			}
+			img{
+				padding:0 20px;
+			}
+		}
 	}
 	.read-more{
 		margin-top:15px;
