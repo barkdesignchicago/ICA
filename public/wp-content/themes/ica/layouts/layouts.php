@@ -3,7 +3,7 @@
 	    while ( have_rows('layout-content') ) : the_row();
 	        if( get_row_layout() == 'full_width' ):
 				?>
-				<div class="row">
+				<div class="row full-width-content">
 					<div class="u-full-width">
 						<?php
 						the_sub_field('content');
@@ -13,16 +13,16 @@
 				<?php
 		    elseif( get_row_layout() == 'two_column' ):
 				?>
-				<div class="row">
+				<div class="row two-column-content">
 					<?php
 					if($sidebar==true):
 						?>
-						<div class="four columns alpha">
+						<div class="four columns alpha column_1">
 							<?php
 							the_sub_field('column_1');
 							?>
 						</div>
-						<div class="four columns omega">
+						<div class="four columns omega column_2">
 							<?php
 							the_sub_field('column_2');
 							?>
@@ -30,12 +30,12 @@
 						<?php
 					else:
 						?>
-						<div class="one-half column alpha">
+						<div class="one-half column alpha column_1">
 							<?php
 							the_sub_field('column_1');
 							?>
 						</div>
-						<div class="one-half column omega">
+						<div class="one-half column omega column_2">
 							<?php
 							the_sub_field('column_2');
 							?>
@@ -47,16 +47,16 @@
 				<?php
 		    elseif( get_row_layout() == 'two_column_small_left' ):
 				?>
-				<div class="row">
+				<div class="row two-column-small-left">
 					<?php
 					if($sidebar==true):
 						?>
-						<div class="three columns alpha">
+						<div class="three columns alpha column_1">
 							<?php
 							the_sub_field('column_1');
 							?>
 						</div>
-						<div class="five columns omega">
+						<div class="five columns omega column_2">
 							<?php
 							the_sub_field('column_2');
 							?>
@@ -64,12 +64,12 @@
 						<?php
 					else:
 						?>
-						<div class="one-third column alpha">
+						<div class="one-third column alpha column_1">
 							<?php
 							the_sub_field('column_1');
 							?>
 						</div>
-						<div class="two-thirds column omega">
+						<div class="two-thirds column omega column_2">
 							<?php
 							the_sub_field('column_2');
 							?>
@@ -81,16 +81,16 @@
 				<?php
 		    elseif( get_row_layout() == 'two_column_small_right' ):
 				?>
-				<div class="row">
+				<div class="row two-column-small-right">
 					<?php
 					if($sidebar==true):
 						?>
-						<div class="five columns alpha">
+						<div class="five columns alpha column_1">
 							<?php
 							the_sub_field('column_1');
 							?>
 						</div>
-						<div class="three columns omega">
+						<div class="three columns omega column_2">
 							<?php
 							the_sub_field('column_2');
 							?>
@@ -98,12 +98,12 @@
 						<?php
 					else:
 						?>
-						<div class="two-thirds column alpha">
+						<div class="two-thirds column alpha column_1">
 							<?php
 							the_sub_field('column_1');
 							?>
 						</div>
-						<div class="one-third column omega">
+						<div class="one-third column omega column_2">
 							<?php
 							the_sub_field('column_2');
 							?>
@@ -115,7 +115,7 @@
 				<?php
 		    elseif( get_row_layout() == 'image_content_area' ):
 				?>
-				<div class="row">
+				<div class="row image-content-area">
 					<div class="u-full-width">
 						<?php
 						$image = get_sub_field('image');
@@ -130,7 +130,7 @@
 				<?php
 		    elseif( get_row_layout() == 'gallery_image_content_area' ):
 				?>
-				<div class="row">
+				<div class="row gallery-content-area">
 					<div class="u-full-width">
 						<?php
 
