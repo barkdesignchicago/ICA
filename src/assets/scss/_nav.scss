@@ -46,7 +46,7 @@
 	}
 	ul{
 		margin:0;
-		padding:0 0 8px;
+		padding:0;
 	}
 	ul[id*="left"]{
 		float:left;
@@ -58,19 +58,59 @@
 		float:right;
 		width:49%;		
 		text-align:center;
+		ul{
+			display:none;
+		}
 	}
 	li{
+		position: relative;
 		display:inline-block;
 		width:140px;		
 		margin:0;
 		padding:0;
 		a{
 			display:block;
-			padding:33px 15px 13px;
+			padding:33px 15px 25px;
 			font-size:16px;
 			text-transform: uppercase;
 			color:$dark_blue;
 		}
+		&:hover{
+			ul{
+				display:block;
+				margin:0;
+				padding:10px 0;
+				position: absolute;
+				background-color:$dark_blue;
+				z-index: 9999;
+				width:200px;
+			}				
+			li{
+				margin:0;
+				text-align: left;
+				a{
+					padding:2px 8px;
+					display:block;
+					color:$lightpalecyan;
+					font-size:12px;
+					&:before{
+					    content: "\f005";
+					    font-family: FontAwesome;
+					    font-style: normal;
+					    font-weight: normal;
+					    text-decoration: inherit;
+					    font-size: 10px;
+					    padding-right: 0.5em;
+					    top: 10px;
+					    left: 0;
+					}
+					&:hover{
+						color:white;
+					}
+				}
+			}
+		}
+
 	}
 	.logo{
 		position: absolute;
@@ -78,6 +118,5 @@
 		margin: -48px 0 0 -72px;
 		padding-top:20px;
 	}
-	
 }
 

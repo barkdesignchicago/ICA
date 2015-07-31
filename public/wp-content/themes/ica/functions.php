@@ -167,4 +167,15 @@ function ribs_custom_pings($comment, $args, $depth) {
 <?php comment_text() ?>
 </div>
 <?php }
+	
+	
+	// Enqueue JS
+add_action( 'wp_enqueue_scripts', 'wp_load_javascript_files' );
+
+function wp_load_javascript_files() {
+
+	wp_register_script( 'commonJS', get_template_directory_uri() . '/assets/js/all.min.js', false, false, true );
+	wp_enqueue_script( 'commonJS' );
+}
+
 
