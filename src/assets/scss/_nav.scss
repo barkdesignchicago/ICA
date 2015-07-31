@@ -82,14 +82,16 @@
 				padding:10px 0;
 				position: absolute;
 				background-color:$dark_blue;
+				left:25px;
 				z-index: 9999;
-				width:200px;
+				width:300px;
 			}				
 			li{
 				margin:0;
 				text-align: left;
+				width:300px;
 				a{
-					padding:2px 8px;
+					padding:2px 15px;
 					display:block;
 					color:$lightpalecyan;
 					font-size:12px;
