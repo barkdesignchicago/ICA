@@ -106,6 +106,11 @@ hr {
 			color:$lightred;
 		}
 	}
+	.news-thumb{
+		img{
+			padding:15px 15px 15px 30px
+		}
+	}
 	.post{
 		margin:0 30px;
 		padding:2px 0;
@@ -129,6 +134,9 @@ hr {
 		margin-top:30px;
 		font-size:14px;
 		.row{
+			hr{
+				margin:0 30px;
+			}
 			&.full-width-content{
 				p{
 					margin:0 30px 20px;

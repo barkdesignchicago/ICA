@@ -1,19 +1,50 @@
 	<?php
 	if( have_rows('layout-content') ):
 	    while ( have_rows('layout-content') ) : the_row();
+        	if( get_sub_field('horizontal_rule') ):
+				$rule = "";
+        		$rule = get_sub_field('horizontal_rule');
+        		$rule_position = "";
+        		if( $rule == true ):
+	        		$rule_position = get_sub_field('horizontal_rule_position');
+        		endif;
+
+        	endif;
+
 	        if( get_row_layout() == 'full_width' ):
 				?>
 				<div class="row full-width-content">
+					<?php 
+					if( $rule_position == 'top' ):
+						?>					
+						<hr />
+						<?php
+					endif;
+					?>
 					<div class="u-full-width">
 						<?php
 						the_sub_field('content');
 						?>
 					</div>
+					<?php 
+					if( $rule_position == 'bottom' ):
+						?>					
+						<hr />
+						<?php
+					endif;
+					?>
 				</div>
 				<?php
 		    elseif( get_row_layout() == 'two_column' ):
 				?>
 				<div class="row two-column-content">
+					<?php 
+					if( $rule_position == 'top' ):
+						?>					
+						<hr />
+						<?php
+					endif;
+					?>
 					<?php
 					if($sidebar==true):
 						?>
@@ -43,11 +74,25 @@
 						<?php
 					endif;
 					?>
+					<?php 
+					if( $rule_position == 'bottom' ):
+						?>					
+						<hr />
+						<?php
+					endif;
+					?>
 				</div>
 				<?php
 		    elseif( get_row_layout() == 'two_column_small_left' ):
 				?>
 				<div class="row two-column-small-left">
+					<?php 
+					if( $rule_position == 'top' ):
+						?>					
+						<hr />
+						<?php
+					endif;
+					?>
 					<?php
 					if($sidebar==true):
 						?>
@@ -77,11 +122,25 @@
 						<?php
 					endif;
 					?>
+					<?php 
+					if( $rule_position == 'bottom' ):
+						?>					
+						<hr />
+						<?php
+					endif;
+					?>
 				</div>
 				<?php
 		    elseif( get_row_layout() == 'two_column_small_right' ):
 				?>
 				<div class="row two-column-small-right">
+					<?php 
+					if( $rule_position == 'top' ):
+						?>					
+						<hr />
+						<?php
+					endif;
+					?>
 					<?php
 					if($sidebar==true):
 						?>
@@ -111,11 +170,25 @@
 						<?php
 					endif;
 					?>
+					<?php 
+					if( $rule_position == 'bottom' ):
+						?>					
+						<hr />
+						<?php
+					endif;
+					?>
 				</div>
 				<?php
 		    elseif( get_row_layout() == 'image_content_area' ):
 				?>
 				<div class="row image-content-area">
+					<?php 
+					if( $rule_position == 'top' ):
+						?>					
+						<hr />
+						<?php
+					endif;
+					?>
 					<div class="u-full-width">
 						<?php
 						$image = get_sub_field('image');
@@ -126,11 +199,25 @@
 						endif; 
 						?>
 					</div>
+					<?php 
+					if( $rule_position == 'bottom' ):
+						?>					
+						<hr />
+						<?php
+					endif;
+					?>
 				</div>
 				<?php
 		    elseif( get_row_layout() == 'gallery_image_content_area' ):
 				?>
 				<div class="row gallery-content-area">
+					<?php 
+					if( $rule_position == 'top' ):
+						?>					
+						<hr />
+						<?php
+					endif;
+					?>
 					<div class="u-full-width">
 						<?php
 
@@ -151,6 +238,13 @@
 						endif;
 						?>
 					</div>
+					<?php 
+					if( $rule_position == 'bottom' ):
+						?>					
+						<hr />
+						<?php
+					endif;
+					?>
 				</div>
 				<?php
 			else:
