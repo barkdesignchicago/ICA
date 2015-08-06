@@ -1,17 +1,15 @@
 	<?php
 	if( have_rows('layout-content') ):
 	    while ( have_rows('layout-content') ) : the_row();
-        	if( get_sub_field('horizontal_rule') ):
-				$rule = "";
-        		$rule = get_sub_field('horizontal_rule');
-        		$rule_position = "";
-        		if( $rule == true ):
-	        		$rule_position = get_sub_field('horizontal_rule_position');
-        		endif;
-
-        	endif;
-
 	        if( get_row_layout() == 'full_width' ):
+				$rule = "";
+        		$rule_position = "";
+		      	if( get_sub_field('horizontal_rule') ):
+	        		$rule = get_sub_field('horizontal_rule');
+	        		if( $rule == true ):
+		        		$rule_position = get_sub_field('horizontal_rule_position');
+	        		endif;
+	        	endif;
 				?>
 				<div class="row full-width-content">
 					<?php 
@@ -36,6 +34,14 @@
 				</div>
 				<?php
 		    elseif( get_row_layout() == 'two_column' ):
+				$rule = "";
+        		$rule_position = "";
+		      	if( get_sub_field('horizontal_rule_2') ):
+	        		$rule = get_sub_field('horizontal_rule_2');
+	        		if( $rule == true ):
+		        		$rule_position = get_sub_field('horizontal_rule_position_2');
+	        		endif;
+	        	endif;
 				?>
 				<div class="row two-column-content">
 					<?php 
@@ -84,6 +90,14 @@
 				</div>
 				<?php
 		    elseif( get_row_layout() == 'two_column_small_left' ):
+				$rule = "";
+        		$rule_position = "";
+		      	if( get_sub_field('horizontal_rule_3') ):
+	        		$rule = get_sub_field('horizontal_rule_3');
+	        		if( $rule == true ):
+		        		$rule_position = get_sub_field('horizontal_rule_position_3');
+	        		endif;
+	        	endif;
 				?>
 				<div class="row two-column-small-left">
 					<?php 
@@ -132,6 +146,14 @@
 				</div>
 				<?php
 		    elseif( get_row_layout() == 'two_column_small_right' ):
+				$rule = "";
+        		$rule_position = "";
+		      	if( get_sub_field('horizontal_rule_4') ):
+	        		$rule = get_sub_field('horizontal_rule_4');
+	        		if( $rule == true ):
+		        		$rule_position = get_sub_field('horizontal_rule_position_4');
+	        		endif;
+	        	endif;
 				?>
 				<div class="row two-column-small-right">
 					<?php 
@@ -180,6 +202,14 @@
 				</div>
 				<?php
 		    elseif( get_row_layout() == 'image_content_area' ):
+				$rule = "";
+        		$rule_position = "";
+		      	if( get_sub_field('horizontal_rule_5') ):
+	        		$rule = get_sub_field('horizontal_rule_5');
+	        		if( $rule == true ):
+		        		$rule_position = get_sub_field('horizontal_rule_position_5');
+	        		endif;
+	        	endif;
 				?>
 				<div class="row image-content-area">
 					<?php 
@@ -209,6 +239,14 @@
 				</div>
 				<?php
 		    elseif( get_row_layout() == 'gallery_image_content_area' ):
+				$rule = "";
+        		$rule_position = "";
+		      	if( get_sub_field('horizontal_rule_6') ):
+	        		$rule = get_sub_field('horizontal_rule_6');
+	        		if( $rule == true ):
+		        		$rule_position = get_sub_field('horizontal_rule_position_6');
+	        		endif;
+	        	endif;
 				?>
 				<div class="row gallery-content-area">
 					<?php 

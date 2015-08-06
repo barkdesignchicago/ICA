@@ -63,7 +63,6 @@ gulp.task('watch', function() {
    browserSync.init({
         proxy: "dev.illinoiscycling.org.10.1.10.19.xip.io:8888",
         host: "localhost",
-        port: 8888
     });
     gulp.watch('src/assets/js/*.js', ['lint', 'scripts']);
     gulp.watch('src/assets/images/**/*', ['images']);

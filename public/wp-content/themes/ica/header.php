@@ -35,6 +35,16 @@
 	<!-- Core Header
 	================================================== -->
 	<?php wp_head(); ?>
+	
+	<script>
+		jQuery(document).ready(function($) {
+	    	$("#menu-mobile-nav").tinyNav({
+			  active: 'current_page_item', // String: Set the "active" class
+			  header: 'Navigation', // String: Specify text for "header" and show header instead of the active item
+			  indent: '- ', // String: Specify text for indenting sub-items
+			});
+	  	});
+	</script>
 
 </head>
 <body <?php body_class(); ?>>
@@ -61,6 +71,7 @@
 							<a itemprop="url" href="<?php echo home_url();?>" title="Home" class="logo"><img src="<?php bloginfo('template_directory'); ?>/assets/images/logo_ICA.png" class="scale-with-grid" /></a>
 							<?php wp_nav_menu( array( 'theme_location' => 'main-menu-left' ) ); ?>
 							<?php wp_nav_menu( array( 'theme_location' => 'main-menu-right' ) ); ?>
+							<?php wp_nav_menu( array( 'theme_location' => 'mobile-menu', 'container_id' => 'mobile-menu' ) ); ?>
 						</nav>
 					</div>
 				</div>

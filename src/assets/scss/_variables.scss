@@ -17,7 +17,7 @@ $mobile-max-breakpoint: $tablet-container-width - 1 !default;
 $dark_blue: rgba(49,87,148,1);
 $darkest_blue: rgba(29,51,95,1);
 $palecyan: rgba(195,233,250,1);
-$lightpalecyan: rgba(217,246,253,1);
+$lightpalecyan: rgba(223, 243, 252, 1);
 $lightgray: rgba(219,219,219, 1);
 $darkgray: rgba(88,89,91,1);
 $lightred: rgba(188,33,50,1);
@@ -142,16 +142,18 @@ $small_font_size: 80% !default;
 $strong_color: #333 !default;
 
 // #Blockquotes
-$blockquote_color: #777 !default;
-$blockquote_border_left: 1px solid #ddd !default;
-$blockquote_cite_color: #555 !default;
-$blockquote_cite_link_color: #555 !default;
-$blockquote_cite_font_size: 12px !default;
-$blockquote_margin: 0 0 20px !default;
-$blockquote_padding: 9px 20px 0 19px !default;
-$blockquote_font_size: 17px !default;
-$blockquote_line_height: 24px !default;
-$blockquote_font_style: italic !default;
+$blockquote_color: $dark_blue !default;
+$blockquote_border_left: 0 !default;
+$blockquote_cite_color: $darkest_blue !default;
+$blockquote_cite_link_color: $dark_blue !default;
+$blockquote_cite_font_size: 14px !default;
+$blockquote_margin: 0 0 10px !default;
+$blockquote_padding: 10px !default;
+$blockquote_font_size: 16px !default;
+$blockquote_line_height: 22px !default;
+$blockquote_font_style: normal !default;
+$blockquote_float_position: right !default;
+$blockquote_width: 325px;
 
 // #Horizontal rules
 $hr_border: solid #ddd !default;

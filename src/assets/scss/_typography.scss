@@ -99,8 +99,18 @@ blockquote, blockquote p {
 
 blockquote {
   margin: $blockquote_margin;
+  width: $blockquote_width;
   padding: $blockquote_padding;
   border-left: $blockquote_border_left;
+  float: $blockquote_float_position;
+  @include breakpoint(tablet){
+	  width:auto;
+	  padding:10px 0;
+  }
+  @include breakpoint(allmobile){
+	  width:auto;
+	  padding:10px 0;
+  }
 }
 
 blockquote cite {

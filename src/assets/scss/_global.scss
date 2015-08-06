@@ -19,13 +19,13 @@ hr {
 .alignleft{
 	float:left;
 	padding-right:10px;
-	padding-bottom:40px;
+	padding-bottom:10px;
 }
 
 .alignright{
 	float:right;
 	padding-left:10px;	
-	padding-bottom:40px;
+	padding-bottom:10px;
 }
 
 .big-container{
@@ -63,9 +63,15 @@ hr {
 	 	padding-top:180px;
 	 	color:#fff;
 	 	text-align:center;
+	 	@include breakpoint(allmobile){
+		 	padding-top:140px;
+	 	}
 	 	h1{
 		 	font-size:69px;
 		 	color:#fff;
+		 	@include breakpoint(allmobile){
+			 	font-size:55px;
+		 	}
 	 	}
  	}
 }
@@ -90,10 +96,13 @@ hr {
 	background-color:#fff;
 	border-top:3px solid $dark_blue;
 	h1{
-		margin:30px;
+		margin:30px 30px 15px;
+		padding-bottom:15px;
 		font-size:18px;
 		line-height:20px;
 		color:$dark_blue;
+		text-transform: uppercase;
+		border-bottom:1px solid #ccc;
 	}
 	h2{
 		margin-top:20px;
@@ -107,20 +116,66 @@ hr {
 		}
 	}
 	.news-thumb{
+		margin:0;
+		padding:0;
+		text-align:center;
 		img{
-			padding:15px 15px 15px 30px
+			margin:15px 15px 15px 30px;
+			@include breakpoint(allmobile){
+				width:83%;
+				text-align:center;
+				margin:0;
+			}
+			@include breakpoint(tablet){
+				width:80%;
+				padding:15px 0 15px 0;
+			}
+
 		}
 	}
 	.post{
 		margin:0 30px;
 		padding:2px 0;
-		&:not(:first-child){
-			border-top:1px solid $lightgray;
-			
-		}
+		border-top:1px solid $lightgray !important;
 		.entry-content{
 			margin-top:12px;
 		}
+		h1{
+			margin-left:0;
+			margin-bottom:5px;
+			font-size:28px;
+			line-height:32px;
+			color:$dark_blue;
+		}
+		h2,h3{
+			margin-left:0 !important;
+		}
+	}
+	.row{
+		.four{
+			&.columns{
+				.post{
+					border:0 !important;
+				}
+			}
+			&.omega{
+				.post{
+					margin-left:0;
+					@include breakpoint(allmobile){
+						margin-left:30px;
+					}
+				}
+			}
+		}
+		.five{
+			&.columns{
+				.post{
+					border:0 !important;
+				}
+			}
+
+		}
+		
 	}
 	.intro-post{
 		@extend .post;
@@ -133,6 +188,24 @@ hr {
 	.entry-content{
 		margin-top:30px;
 		font-size:14px;
+		h1{
+		}
+		h2{
+			font-size:28px;
+			color:$dark_blue;
+			margin:0 0 15px 30px;
+		}
+		h3{
+			font-size:18px;
+			text-transform:uppercase;			
+			line-height:22px;
+			margin-left:30px;
+			color:$dark_blue;
+		}
+		a{
+			background-color:$lightpalecyan;
+		}		
+
 		.row{
 			hr{
 				margin:0 30px;
@@ -193,6 +266,11 @@ hr {
 				}
 			}
 		}
+		.column_2{
+			h1,h2,h3,h4,h5{
+				margin:0;
+			}
+		}
 	}
 	.read-more{
 		margin-top:15px;
@@ -210,12 +288,22 @@ hr {
 		 	line-height:72px;
 		 	color:#fff;
 		 	text-transform: uppercase;
+		 	border:0 !important;
+		 	@include breakpoint(allmobile){
+			 	margin:0;
+			 	font-size:48px;
+			 	text-align:center;
+		 	}
 		}
 	}
 	
 }
 
-
+.single{
+	h1{
+		border:0 !important;
+	}
+}
 
 
 /* Sidebar content area */
@@ -262,6 +350,9 @@ hr {
 		a{
 			color:#fff;
 		}
+		.alignleft{
+			padding-bottom:80px;
+		}
 		
 	}
 	.widget_flexipages{
@@ -285,18 +376,51 @@ hr {
 			    left: 0;
 			}
 		}
+		h3{
+			color:$lightred;
+			font-size:18px;
+		}
 		.current_page_item{
 			a{
 				color:$lightred;
 			}
 		}
 	}
+	.widget_categories{
+		@extend .widget_flexipages;
+		
+	}
+	.widget_recent_entries{
+		@extend .widget_flexipages;
+		
+	}
 
+}
+
+.page-template-page-calendar-php{
+	#main-content{
+		.vcalendar{
+			a{
+				background-color:transparent !important;
+			}
+		}
+		.tribe-events-button{
+			background-color:$dark_blue;	
+		}
+		.tribe-events-sub-nav{
+			a{
+				background-color:transparent;
+			}
+		}
+		.tribe-events-calendar td.tribe-events-present div[id*=tribe-events-daynum-], .tribe-events-calendar td.tribe-events-present div[id*=tribe-events-daynum-]>a{
+			background-color:$dark_blue;			
+		}
+
+	}
 }
 
 
 /* Above Footer Rule */
-
 
 .bottom-rule-home{
 	padding-top:100px;

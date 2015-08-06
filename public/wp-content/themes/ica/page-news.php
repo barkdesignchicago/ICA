@@ -87,7 +87,13 @@ Template Name: News Page
 													<?php edit_post_link( __( 'Edit', 'blankslate' ), "<span class=\"meta-sep\"> | </span>\n\t\t\t\t\t\t<span class=\"edit-link\">", "</span>\n\t\t\t\t\t" ) ?>
 												</div>
 												<div class="entry-content">
-													<?php the_content('<br /><span class="button read-more">READ MORE</span>');?>
+													<?php
+														$content = get_the_content('<br /><span class="button read-more">READ MORE</span>');
+														$content = preg_replace("/<img[^>]+\>/i", " ", $content);          
+														$content = apply_filters('the_content', $content);
+														$content = str_replace(']]>', ']]>', $content);
+														echo $content;
+													?>
 												</div>
 												<?php global $authordata; ?>
 											</div>

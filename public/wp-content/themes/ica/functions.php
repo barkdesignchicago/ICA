@@ -12,7 +12,8 @@ function ribs_setup(){
 			'main-menu-right' => __( 'Main Menu (Right)', 'ribs' ),
 			'utility-menu' => __( 'Utility Menu', 'ribs' ),
 			'footer-menu' => __( 'Footer Menu', 'ribs' ),
-			'footer-utility-menu' => __( 'Footer Utility Menu', 'ribs' )
+			'footer-utility-menu' => __( 'Footer Utility Menu', 'ribs' ),
+			'mobile-menu' => __( 'Mobile Menu', 'ribs' )
 		 )
 	);
 }
@@ -174,8 +175,18 @@ add_action( 'wp_enqueue_scripts', 'wp_load_javascript_files' );
 
 function wp_load_javascript_files() {
 
-	wp_register_script( 'commonJS', get_template_directory_uri() . '/assets/js/all.min.js', false, false, true );
-	wp_enqueue_script( 'commonJS' );
+wp_enqueue_script( 'jquery' );
+wp_register_script( 'commonJS', get_template_directory_uri() . '/assets/js/all.min.js', false, false, true );
+wp_enqueue_script( 'commonJS' );
 }
+
+
+// Register new thumb sizes for NEWS
+if ( function_exists( 'add_image_size' ) ) { 
+	add_image_size( 'full-width-header', 270, 230, true ); //(cropped)
+
+}
+
+
 
 
