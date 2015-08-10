@@ -15,8 +15,8 @@
 				</div>
 				<div class="six columns footer-social">
 					<ul>
-						<li><a href="#"><img src="<?php bloginfo('template_directory'); ?>/assets/images/icon_facebook_lightblue.png" alt="Illinois Cycling Association Facebook Profile" width="10" height="18"></a></li>
-						<li><a href="#"><img src="<?php bloginfo('template_directory'); ?>/assets/images/icon_twitter_lightblue.png" alt="Illinois Cycling Association Twitter Profile" width="21" height="17"></a></li>
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 					</ul>
 					<p>
 						COMMITTED TO BICYCLE RACING IN THE STATE OF ILLINOIS

@@ -57,8 +57,8 @@
 				<div class="container">
 					<div class="twelve columns">
 						<ul class="social-menu">
-							<li><a href="#"><img src="<?php bloginfo('template_directory'); ?>/assets/images/icon_facebook_blue.png" alt="Illinois Cycling Association Facebook Profile" width="10" height="18"></a></li>
-							<li><a href="#"><img src="<?php bloginfo('template_directory'); ?>/assets/images/icon_twitter_blue.png" alt="Illinois Cycling Association Twitter Profile" width="21" height="17"></a></li>
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 						</ul>
 						<?php wp_nav_menu( array( 'theme_location' => 'utility-menu' ) ); ?>
 					</div>					

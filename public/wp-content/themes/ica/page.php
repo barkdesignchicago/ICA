@@ -38,6 +38,16 @@
 							<div class="featured-image clearfix" style="<?php echo $bgsetup;?>">
 								<h1><?php the_title();?></h1>
 							</div>
+							<?php 
+								if( get_field('photo_credit_text') ):
+									$credit =  "<span class='photo-credit'>Photo Credit: ".get_field('photo_credit_text')."</span>";
+									if( get_field('photo_credit_link') ):
+										echo "<a href='".get_field('photo_credit_link')."' target='_BLANK'>".$credit."</a>";
+									else:
+										echo $credit;
+									endif;
+								endif; 
+							?>
 							<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 								<div class="entry-content">
 									<?php require('layouts/layouts.php'); ?>

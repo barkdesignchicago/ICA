@@ -45,6 +45,16 @@ Template Name: News Page
 						<div class="featured-image clearfix" style="<?php echo $bgsetup;?>">
 							<h1><?php the_title();?></h1>
 						</div>
+						<?php 
+							if( get_field('photo_credit_text') ):
+								$credit =  "<span class='photo-credit'>Photo Credit: ".get_field('photo_credit_text')."</span>";
+								if( get_field('photo_credit_link') ):
+									echo "<a href='".get_field('photo_credit_link')."' target='_BLANK'>".$credit."</a>";
+								else:
+									echo $credit;
+								endif;
+							endif; 
+						?>
 						<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<div class="entry-content">
 								<?php require('layouts/layouts.php'); ?>
@@ -66,13 +76,13 @@ Template Name: News Page
 								while ( $news_query->have_posts() ) : $news_query->the_post(); 
 									if ( has_post_thumbnail() ) :
 										?>
-										<div class="three columns alpha news-thumb">
+										<div class="four columns alpha news-thumb">
 											<?php
-												$thumb_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+												$thumb_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full-width-header' );
 											?>
 											<img src="<?php echo $thumb_url[0];?>" class="scale-with-grid" />
 										</div>
-										<div class="five columns omega">
+										<div class="four columns omega">
 										<?php
 									else:
 										?>
