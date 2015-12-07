@@ -178,6 +178,9 @@ function wp_load_javascript_files() {
 wp_enqueue_script( 'jquery' );
 wp_register_script( 'commonJS', get_template_directory_uri() . '/assets/js/all.min.js', false, false, true );
 wp_enqueue_script( 'commonJS' );
+wp_register_script( 'cycle2', get_template_directory_uri() . '/assets/js/jquery.cycle2.min.js', false, false, true );
+wp_enqueue_script( 'cycle2' );
+
 }
 
 

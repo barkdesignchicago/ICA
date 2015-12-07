@@ -17,12 +17,9 @@ if ( ! class_exists( 'Tribe__Events__Admin_List' ) ) {
 		/**
 		 * The init function for this class, adds actions and filters.
 		 *
-		 * @return void
 		 */
 		public static function init() {
 			if ( is_admin() && ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
-				add_filter( 'tribe_events_query_posts_orderby', array( __CLASS__, 'override_tribe_events_query_orderby' ) );
-
 				// Logic for sorting events by event category or tags
 				add_filter( 'posts_clauses', array( __CLASS__, 'sort_by_tax' ), 10, 2 );
 
@@ -45,14 +42,6 @@ if ( ! class_exists( 'Tribe__Events__Admin_List' ) ) {
 				// Registers event start/end date as sortable columns
 				add_action( 'manage_edit-' . Tribe__Events__Main::POSTTYPE . '_sortable_columns', array( __CLASS__, 'register_sortable_columns' ), 10, 2 );
 			}
-		}
-
-		/**
-		 * Override the orderby that is set up in Tribe__Events__Query. The dashboard event list has its own
-		 * orderby rules
-		 */
-		public static function override_tribe_events_query_orderby( $orderby ) {
-			return '';
 		}
 
 		/**
@@ -101,12 +90,12 @@ if ( ! class_exists( 'Tribe__Events__Admin_List' ) ) {
 
 			// only add the start meta query if it is missing
 			if ( ! preg_match( '/tribe_event_start_date/', $clauses['join'] ) ) {
-				$clauses['join'] .= "LEFT JOIN {$wpdb->postmeta} AS tribe_event_start_date ON {$wpdb->posts}.ID = tribe_event_start_date.post_id AND tribe_event_start_date.meta_key = '_EventStartDate' ";
+				$clauses['join'] .= " LEFT JOIN {$wpdb->postmeta} AS tribe_event_start_date ON {$wpdb->posts}.ID = tribe_event_start_date.post_id AND tribe_event_start_date.meta_key = '_EventStartDate' ";
 			}
 
 			// only add the end meta query if it is missing
 			if ( ! preg_match( '/tribe_event_end_date/', $clauses['join'] ) ) {
-				$clauses['join'] .= "LEFT JOIN {$wpdb->postmeta} AS tribe_event_end_date ON {$wpdb->posts}.ID = tribe_event_end_date.post_id AND tribe_event_end_date.meta_key = '_EventEndDate' ";
+				$clauses['join'] .= " LEFT JOIN {$wpdb->postmeta} AS tribe_event_end_date ON {$wpdb->posts}.ID = tribe_event_end_date.post_id AND tribe_event_end_date.meta_key = '_EventEndDate' ";
 			}
 
 			if ( ! empty( $clauses['orderby'] ) ) {
@@ -226,14 +215,14 @@ if ( ! class_exists( 'Tribe__Events__Admin_List' ) ) {
 			foreach ( (array) $columns as $key => $value ) {
 				$mycolumns[ $key ] = $value;
 				if ( $key == 'author' ) {
-					$mycolumns['events-cats'] = sprintf( __( '%s Categories', 'tribe-events-calendar' ), $events_label_singular );
+					$mycolumns['events-cats'] = sprintf( esc_html__( '%s Categories', 'the-events-calendar' ), $events_label_singular );
 				}
 			}
 			$columns = $mycolumns;
 
 			unset( $columns['date'] );
-			$columns['start-date'] = __( 'Start Date', 'tribe-events-calendar' );
-			$columns['end-date']   = __( 'End Date', 'tribe-events-calendar' );
+			$columns['start-date'] = esc_html__( 'Start Date', 'the-events-calendar' );
+			$columns['end-date']   = esc_html__( 'End Date', 'the-events-calendar' );
 
 			return $columns;
 		}
@@ -274,7 +263,6 @@ if ( ! class_exists( 'Tribe__Events__Admin_List' ) ) {
 		 * @param string $column_id The custom column id.
 		 * @param int    $post_id   The post id for the data.
 		 *
-		 * @return void
 		 */
 		public static function custom_columns( $column_id, $post_id ) {
 			switch ( $column_id ) {
@@ -311,7 +299,7 @@ if ( ! class_exists( 'Tribe__Events__Admin_List' ) ) {
 				$total_posts -= $num_posts->$state;
 			}
 
-			$counts['all'] = "<a href='edit.php?post_type=tribe_events' class='current'>" . sprintf( __( 'All %s', 'tribe-events-calendar' ), "<span class='count'>({$total_posts})</span>" ) . '</a>';
+			$counts['all'] = "<a href='edit.php?post_type=tribe_events' class='current'>" . sprintf( esc_html__( 'All %s', 'the-events-calendar' ), "<span class='count'>({$total_posts})</span>" ) . '</a>';
 
 			foreach ( get_post_stati( array( 'show_in_admin_status_list' => true ), 'objects' ) as $status ) {
 				$class = '';

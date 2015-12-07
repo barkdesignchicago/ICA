@@ -364,11 +364,11 @@
 			tribe_events_bar_calendar_ajax_actions( e );
 		} );
 
-		$( te ).on( "tribe_ev_runAjax", function() {
+		$( te ).on( 'tribe_ev_runAjax', function() {
 			tribe_events_calendar_ajax_post();
 		} );
 
-		$( te ).on( "tribe_ev_updatingRecurrence", function() {
+		$( te ).on( 'tribe_ev_updatingRecurrence', function() {
 			ts.date = $( '#tribe-events-header' ).data( "date" );
 			if ( ts.filter_cats ) {
 				td.cur_url = $( '#tribe-events-header' ).data( 'baseurl' ) + ts.date + '/';

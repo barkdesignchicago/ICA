@@ -10,38 +10,49 @@ Template Name: Home Page
 	================================================== -->
 	<section>
 		<div id="hero-container" class="big-container">
-			<?php 
-				if( have_rows('home_page_slider') ):
-					while( have_rows('home_page_slider') ): the_row(); 
-						$slide = get_sub_field('slide');
-						$message = get_sub_field('message');
-						$photo_credit_text = get_sub_field('photo_credit_text');
-						$photo_credit_link = get_sub_field('photo_credit_link');
-					?>
-						<div class="hero" style="background-image:url(<?php echo $slide['url'] ?>)">
-							<div class="container">
-								<div class="twelve columns">
-									<div class="hero-message">
-										<h1><?php echo $message; ?></h1>
+			<div class="cycle-slideshow" 
+				data-cycle-fx="fade" 
+				data-cycle-timeout="4000"
+				data-cycle-slides="> div"
+			>
+				
+				<?php 
+					$rows = get_field('home_page_slider');
+					if($rows):
+						shuffle( $rows );
+
+					
+					
+						foreach($rows as $row):
+							$slide = $row['slide'];
+							$message = $row['message'];
+							$photo_credit_text = $row['photo_credit_text'];
+							$photo_credit_link = $row['photo_credit_link'];
+						?>
+							<div class="hero" style="width:100%; background-image:url(<?php echo $slide['url']; ?>)">
+								<div class="container">
+									<div class="twelve columns">
+										<div class="hero-message">
+											<h1><?php echo $message; ?></h1>
+										</div>
 									</div>
 								</div>
-							</div>
 								<?php 
-								if( get_sub_field('photo_credit_text') ):
+								if( $row['photo_credit_text'] ):
 									$credit =  "<span class='photo-credit home'>Photo Credit: ".$photo_credit_text."</span>";
-									if( get_sub_field('photo_credit_link') ):
+									if( $row['photo_credit_link'] ):
 										echo "<a class='photo-credit-link clearfix' href='".$photo_credit_link."' target='_BLANK'>".$credit."</a>";
 									else:
 										echo $credit;
 									endif;
 								endif; 
 								?>
-
-						</div>
-					<?php
-					endwhile;
-				endif;
-			?>
+							</div>
+						<?php
+						endforeach;
+					endif;
+				?>
+			</div>
 		</div>
 		<div id="small-callout" class="big-container">
 			<div class="container">
